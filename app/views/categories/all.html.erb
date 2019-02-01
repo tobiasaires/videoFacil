@@ -1,0 +1,7 @@
+<% @categories.each do |category| %>
+
+    <h2><%= category.name %></h2>
+    <%= link_to "Ver Categoria", category_path(category), class: "btn btn-default" %>
+
+
+<% end %>
