@@ -4,7 +4,7 @@ class CategoriesController < ApplicationController
 
 
     def index
-        @categories = Category.all.where(is_favorite: true)
+        @categories = Category.all
     end
 
     def new
@@ -37,10 +37,6 @@ class CategoriesController < ApplicationController
     def destroy
         @category.destroy
         redirect_to root_path
-    end
-
-    def all
-        @categories = Category.all
     end
 
 
