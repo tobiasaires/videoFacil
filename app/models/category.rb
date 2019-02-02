@@ -1,3 +1,3 @@
 class Category < ApplicationRecord
-    has_many :video
+    has_many :videos
 end

@@ -1,4 +1,4 @@
 class Video < ApplicationRecord
   belongs_to :category
-  has_many :comment
+  has_many :comments
 end
