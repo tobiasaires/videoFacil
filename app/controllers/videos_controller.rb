@@ -2,6 +2,7 @@ class VideosController < ApplicationController
     
     before_action :find_video, only: [:show, :edit, :update, :destroy]
     before_action :find_category, only: [:new, :edit]
+    before_action :find_video_by_category, only: [:video_json]
     
     def new
         @video = Video.new
@@ -39,9 +40,10 @@ class VideosController < ApplicationController
     end
 
     def video_json
-        @video = Video.where(category_id: params[:id])
         render json: @video.as_json(only: [:url, :title])
     end
+
+
 
     private
         
@@ -55,6 +57,10 @@ class VideosController < ApplicationController
 
         def find_category
             @categories = Category.all.map{ |c| [c.name, c.id] }
+        end
+
+        def find_video_by_category
+            @video = Video.where(category_id: params[:id])
         end
 
 end

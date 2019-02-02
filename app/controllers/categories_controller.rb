@@ -5,6 +5,9 @@ class CategoriesController < ApplicationController
 
     def index
         @categories = Category.all
+        @videos = Video.all
+        
+        return @categories, @videos
     end
 
     def new
