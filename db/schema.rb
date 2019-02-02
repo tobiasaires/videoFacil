@@ -10,13 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_01_012917) do
+ActiveRecord::Schema.define(version: 2019_02_02_144851) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.boolean "is_favorite"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.string "author"
+    t.text "content"
+    t.integer "video_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["video_id"], name: "index_comments_on_video_id"
   end
 
   create_table "videos", force: :cascade do |t|
