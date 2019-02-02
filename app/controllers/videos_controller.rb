@@ -23,7 +23,6 @@ class VideosController < ApplicationController
     end
     
     def edit
-        @categories = Category.all.map{ |c| [c.name, c.id] }
     end
 
     def update
@@ -39,6 +38,10 @@ class VideosController < ApplicationController
         redirect_to root_path
     end
 
+    def video_json
+        @video = Video.where(category_id: params[:id])
+        render json: @video.as_json(only: [:url, :title])
+    end
 
     private
         
