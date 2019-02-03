@@ -1,19 +1,22 @@
 
-<% @categories.each do |category| %>
 
-    <h2>
-        <%=link_to "#{category.name}", category_path(category)%>
-    </h2>
-    <% if category.is_favorite?  %>
-        <% @videos.each do |video| %>
-            <% if category.id == video.category_id %>
-                <ul>
-                    <li><%= link_to "#{video.title}", video_path(video) %></li>
-                </ul>
+<div class="container">
+    <div class="row">
+        <% @categories.each do |category| %>
+            <div class='col-md-4'>
+            <h2>
+                <%=link_to "#{category.name}", category_path(category)%>
+            </h2>
+            <% if category.is_favorite?  %>
+                <% @videos.each do |video| %>
+                    <% if category.id == video.category_id %>
+                        <ul>
+                            <li><%= link_to "#{video.title}", video_path(video) %></li>
+                        </ul>
+                    <%end%>
             <%end%>
-       <%end%>
-<% end %>
-    
-
-<% end %>
-<%= link_to "Criar Categoria", new_category_path, class: "btn btn-primary" %>
+        <% end %>
+        </div>
+    <% end %>
+    </div>
+</div>
