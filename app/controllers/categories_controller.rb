@@ -23,7 +23,9 @@ class CategoriesController < ApplicationController
         end
     end
     
-    def show   
+    def show
+        @videos = Video.where(category_id: params[:id])
+        return @category, @videos 
     end
     
     def edit
@@ -52,4 +54,5 @@ class CategoriesController < ApplicationController
         def find_category
             @category = Category.find(params[:id])
         end
+
 end
