@@ -5,7 +5,7 @@
         <% @categories.each do |category| %>
             <div class='col-md-4'>
             <h2>
-                <%=link_to "#{category.name}", category_path(category)%>
+                <%=category.name%>
             </h2>
             <% if category.is_favorite?  %>
                 <% @videos.each do |video| %>
@@ -16,6 +16,7 @@
                     <%end%>
             <%end%>
         <% end %>
+            <%= link_to "Ver Categoria", category_path(category), class: "btn btn-primary"%>
         </div>
     <% end %>
     </div>
