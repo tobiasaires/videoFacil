@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   end
   root 'categories#index'
 
-  get '/:id', to: 'videos#video_json'
+  get '/api/:id', to: 'videos#video_json'
 end

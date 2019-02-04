@@ -40,7 +40,14 @@ class VideosController < ApplicationController
     end
 
     def video_json
-        render json: @video.as_json(only: [:url, :title])
+        if @video.any?
+            @category = Category.find(params[:id]).name
+            render json: {status: 200, category: @category  ,video: @video.as_json(only: [:url, :title])}
+        else
+            render json: {status: 404,
+                message: "Não há videos cadastrados ou categoria inexistente"
+            }
+        end
     end
 
 
