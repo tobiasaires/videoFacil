@@ -9,6 +9,21 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  	<nav class="navbar navbar-default">
+		<div class="container">
+			<div class="navbar-header">
+				<%= link_to "Video Fácil", root_path, class: "navbar-brand" %>
+			</div>
+			<div class="navbar-nav">
+				<p><%= link_to "Criar Categoria", new_category_path, class: "navbar-text" %></p>
+		</div>
+    <div class="navbar-nav">
+			  <p><%= link_to "Adicionar Video", new_video_path, class: "navbar-text" %></p>
+    </div>  
+		</div>
+	</nav>
+  <p class="notice"><%= notice %></p>
+	<p class="alert"><%= alert %></p>
   <body>
     <%= yield %>
   </body>

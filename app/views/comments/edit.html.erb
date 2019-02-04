@@ -1,0 +1,7 @@
+<h1>Edit: </h1>
+
+<%= simple_form_for([@video, @comment]) do |c| %>
+	<%= c.input :author, label: "Autor" %>
+    <%= c.input :content, label: "Comentario" %>
+	<%= c.button :submit %>
+<% end %>

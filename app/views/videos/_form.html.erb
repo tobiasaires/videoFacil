@@ -1,0 +1,6 @@
+<%= simple_form_for @video  do |v| %>
+	<%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select a category") %>
+	<%= v.input :title, label: "Titulo do Video" %>
+	<%= v.input :url %>
+	<%= v.button :submit %>
+<% end %>

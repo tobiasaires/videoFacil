@@ -1,0 +1,13 @@
+<h2><%= @category.name %></h2>
+
+
+<ul>
+    <% @videos.each do |video| %>
+        <li><%= link_to "#{video.title}", video_path(video) %></li>
+        <%= link_to "Editar", edit_video_path(video)%>
+        <%= link_to "Excluir", video_path(video), method: :delete, data: {confirm: "Você tem certeza?"}%>
+    
+    <% end %>
+</ul>
+<%= link_to "Editar Categoria", edit_category_path(@category) %>
+<%= link_to "Deletar Categoria", category_path(@category), method: :delete, data: {confirm: "Você tem certeza?"}%>
