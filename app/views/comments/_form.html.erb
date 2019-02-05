@@ -1,5 +1,10 @@
 <%= simple_form_for([@video, @video.comments.build]) do |c| %>
-	<%= c.input :author, label: "Autor " %>
-    <%= c.input :content, label: "Comentario "%>
+	<div class="form-group">
+		<%= c.input :author, label: "Autor ", input_html: {class: "form-control"} %>
+	</div>
+	<div class="form-group">
+    	<%= c.input :content, label: "Comentario ", input_html: {class: "form-control"}%>
+	</div>
 	<%= c.button :submit, class: "btn btn-success", value: "Comentar" %>
+	</div>
 <% end %>
