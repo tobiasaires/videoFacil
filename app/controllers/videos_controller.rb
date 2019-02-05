@@ -6,6 +6,9 @@ class VideosController < ApplicationController
     
     def new
         @video = Video.new
+        unless @categories.any?
+            render 'erro'
+        end
     end
     
     def create
