@@ -59,6 +59,8 @@ You can change the port by typing
 
 This file corresponds to the main app view.
 
+![root_page](https://scontent.ffor8-1.fna.fbcdn.net/v/t1.15752-9/51413076_310570983137044_6578171777409613824_n.png?_nc_cat=107&_nc_ht=scontent.ffor8-1.fna&oh=844fa76f7f27d0dd615feb70fd66d2c4&oe=5CF12243)
+
 
 ## Comments
 
