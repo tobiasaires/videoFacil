@@ -4,7 +4,7 @@
         <%= c.input :name, label: "Nome da Categoria ", input_html: {class: "form-control"}%>
     </div>
     <div class="form-group"> 
-        <%= c.input :is_favorite,label: "É sua categoria favorita? ", as: :radio_buttons, input_html: {class: "form-check-input"} %>
+        <%= c.input :is_favorite,label: "Favorita", as: :boolean, boolean_style: :inline %>
     </div>
         <%= c.button :submit, value: "Criar Categoria", class: "btn btn-success" %>
     </div>
