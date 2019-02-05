@@ -1,13 +1,23 @@
 <h2><%= @category.name %></h2>
 
-
-<ul>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Video</th>
+      <th scope="col">Editar</th>
+      <th scope="col">Excluir</th>
+    </tr>
+  </thead>
+  <tbody>
     <% @videos.each do |video| %>
-        <li><%= link_to "#{video.title}", video_path(video) %></li>
-        <%= link_to "Editar", edit_video_path(video)%>
-        <%= link_to "Excluir", video_path(video), method: :delete, data: {confirm: "Você tem certeza?"}%>
-    
-    <% end %>
-</ul>
-<%= link_to "Editar Categoria", edit_category_path(@category) %>
-<%= link_to "Deletar Categoria", category_path(@category), method: :delete, data: {confirm: "Você tem certeza?"}%>
+        <tr>
+            <td><%= link_to "#{video.title}", video_path(video) %></td>
+            <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_video_path(video) %></td>
+            <td><%= link_to '<i class="fa fa-trash"></i>'.html_safe, video_path(video), method: :delete, data: {confirm: "Você tem certeza?"}%></td>
+        </tr>
+    <%end%>
+  </tbody>
+</table>
+
+<%= link_to "Editar Categoria", edit_category_path(@category), class: "btn btn-warning" %>
+<%= link_to "Excluir Categoria", category_path(@category), method: :delete, data: {confirm: "Você tem certeza?"}, class: "btn btn-danger"%>

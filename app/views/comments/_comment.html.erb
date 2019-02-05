@@ -1,4 +1,9 @@
-<h3><%= comment.author %></h3>
-<p><%= comment.content %></p><small><%= time_ago_in_words(comment.created_at)%> ago</small>
-<%= link_to "Editar", edit_video_comment_path(comment.video, comment) %>
-<%= link_to "Deletar", video_comment_path(comment.video, comment), method: :delete, data: {confirm: "Você tem certeza?"}%>
+<div class="comment">
+
+    <p class="comment-content"><%= comment.content %></p>
+    <div class="container-comment">
+        <p class= "comment-posted">Posted by <%= comment.author %> <%= time_ago_in_words(comment.created_at) %> ago</p>
+            <%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_video_comment_path(comment.video, comment) %>
+            <%= link_to '<i class="fa fa-trash"></i>'.html_safe, video_comment_path(comment.video, comment), method: :delete, data: {confirm: "Você tem certeza?"}%>
+    </div>
+</div>

@@ -1,6 +1,13 @@
 <%= simple_form_for @video  do |v| %>
-	<%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select a category") %>
-	<%= v.input :title, label: "Titulo do Video" %>
-	<%= v.input :url %>
-	<%= v.button :submit %>
+	<div class = "form-group">
+		<%= select_tag(:category_id, options_for_select(@categories), :prompt => "Selecionar Categoria") %>
+	</div>
+	<div class="form-group">
+		<%= v.input :title, label: "Titulo do Video", input_html: {class: "form-control"} %>
+	</div>
+	<div class="form-group">
+		<%= v.input :url, input_html: {class: "form-control"} %>
+	</div>
+	<%= v.button :submit, class: "btn btn-primary" %>
+	</div>
 <% end %>

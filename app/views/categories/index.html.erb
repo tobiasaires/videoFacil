@@ -1,23 +1,30 @@
 
 
 <div class="container">
+    <% if @categories.any? %>
+    <div class = 'container'>
     <div class="row">
         <% @categories.each do |category| %>
-            <div class='col-md-4'>
+            <div class='col-md-3 category'>
             <h2>
                 <%=category.name%>
             </h2>
             <% if category.is_favorite?  %>
                 <% @videos.each do |video| %>
                     <% if category.id == video.category_id %>
-                        <ul>
-                            <li><%= link_to "#{video.title}", video_path(video) %></li>
+                        <ul class="list-group">
+                            <li class ="list-group-item"><%= link_to "#{video.title}", video_path(video)%></li>
                         </ul>
                     <%end%>
             <%end%>
         <% end %>
-            <%= link_to "Ver Categoria", category_path(category), class: "btn btn-primary"%>
+            <%= link_to "Ver Categoria", category_path(category), class: "btn btn-info"%>
+            <%= link_to "Adicionar Video", new_video_path, class: "btn btn-primary" %>
         </div>
+    <% end %>
+    </div>
+    <%else%>
+        <%= render 'anyCategory' %>
     <% end %>
     </div>
 </div>
