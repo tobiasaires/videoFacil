@@ -37,7 +37,7 @@ then:
 
     bundle install
 
-and then:
+Finally:
 
 	rails db:migrate
 
@@ -64,7 +64,7 @@ This file corresponds to the main app view.
 
 ## Comments
 
-This project was built for Mercadapp Inteern Hiring Process. And I'm also learning rails, so feel free to contact me and give me any feedback about this project.
+This project was built for Mercadapp Inteern Hiring Process. And I'll keep learning rails, so feel free to contact me and give me any feedback about this project.
 
 ## Author
 
