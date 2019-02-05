@@ -12,9 +12,12 @@
     <% @videos.each do |video| %>
         <tr>
             <td><%= link_to "#{video.title}", video_path(video) %></td>
-            <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_category_path(@category) %></td>
-            <td><%= link_to '<i class="fa fa-trash"></i>'.html_safe, category_path(@category), method: :delete, data: {confirm: "Você tem certeza?"}%></td>
+            <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_video_path(video) %></td>
+            <td><%= link_to '<i class="fa fa-trash"></i>'.html_safe, video_path(video), method: :delete, data: {confirm: "Você tem certeza?"}%></td>
         </tr>
     <%end%>
   </tbody>
 </table>
+
+<%= link_to "Editar Categoria", edit_category_path(@category), class: "btn btn-warning" %>
+<%= link_to "Excluir Categoria", category_path(@category), method: :delete, data: {confirm: "Você tem certeza?"}, class: "btn btn-danger"%>
