@@ -37,7 +37,7 @@ then:
 
     bundle install
 
-and then:
+Finally:
 
 	rails db:migrate
 
